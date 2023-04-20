@@ -46,9 +46,6 @@ img {
 button {
   font-family: inherit;
 }
-/* li:not(:last-child) { 
-  margin-bottom: 0;
-}*/
 /* Ховає заголовки */
 .visually-hidden {
   position: absolute;
@@ -120,29 +117,49 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color-navy-blue);
-  transition-property: color;
-  transition: var(--transition-duration-and-func);
+  /* transform: color: var(var(--color-ocean));
+  transition-property: color var(--transition-duration-and-func); */
+  animation: staticColor infinite alternate forwards;
 }
-.nav-page:hover,
-.nav-page:focus {
-  color: var(--color-ocean);
+@keyframes staticColor {
+  0% {
+    transform: var(--color-navy-blue);
+  }
+  100% {
+    transform: var(--color-ocean);
+  }
 }
 
+/* .nav-page:hover,
+.nav-page:focus {
+  animation-name: staticColor;
+  animation-fill-mode: both;
+} */
+/* .nav-page.active {
+  color: var(--color-ocean);
+} */
 /* Overline */
 .nav-page::after {
   content: '';
   position: absolute;
   top: 44px;
   height: 4px;
-  width: 48px;
+  width: 100%;
   border-radius: 2px;
   background-color: none;
-  transition-property: background-color;
+  /* opacity: 0;
+  transition-property: opacity var(--transition-duration-and-func); */
 }
-.nav-page:hover:after {
+/* .nav-page:hover::after,
+.nav-page:focus::after {
+  opacity: 1;
+} */
+
+/* .nav-page.active::after,
+.nav-page:hover::after,
+.nav-page:focus::after {
   background-color: var(--color-iris);
-  transition-property: background-color var(--color-iris);
-}
+} */
 .contact {
   display: flex;
   justify-content: space-between;
@@ -157,8 +174,7 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color-slate);
-  transition-property: color;
-  transition: var(--transition-duration-and-func);
+  transition-property: color var(--transition-duration-and-func);
 }
 .contact-nav:hover,
 .contact-nav:focus {
@@ -212,8 +228,7 @@ button {
   padding: 16px 32px;
   border-radius: 4px;
   margin-top: 48px;
-  transition-property: backgraund-color;
-  transition: var(--transition-duration-and-func);
+  transition-property: background-color var(--transition-duration-and-func);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -348,8 +363,7 @@ button {
   background-color: var(--color-iris);
   color: var(--color-cloud);
   border-radius: 50%;
-  transition-property: background-color;
-  transition: var(--transition-duration-and-func);
+  transition-property: background-color var(--transition-duration-and-func);
 }
 .cont-icon:hover,
 .cont-icon:focus {
@@ -394,8 +408,8 @@ button {
   color: #afb1b8;
   border: 1px solid var(--color-light-slate);
   border-radius: 4px;
-  transition-property: color border;
-  transition: var(--transition-duration-and-func);
+  transition-property: color var(--transition-duration-and-func),
+    border var(--transition-duration-and-func);
 }
 .client-cont:hover,
 .client-cont:focus {
@@ -468,8 +482,7 @@ button {
   align-items: center;
   background-color: var(--color-iris);
   color: var(--color-cloud);
-  transition-property: background-color;
-  transition: var(--transition-duration-and-func);
+  transition-property: background-color var(--transition-duration-and-func);
 }
 .social-bg:hover,
 .social-bg:focus {
@@ -512,8 +525,8 @@ button {
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  transition-property: background-color color;
-  transition: var(--transition-duration-and-func);
+  transition-property: background-color var(--transition-duration-and-func),
+    color var(--transition-duration-and-func);
   cursor: pointer;
 }
 .close-btn:hover,
@@ -559,8 +572,9 @@ body {
   letter-spacing: 0.04em;
   color: var(--color-iris);
   cursor: pointer;
-  transition-property: background-color color box-shadow;
-  transition: var(--transition-duration-and-func);
+  transition-property: background-color var(--transition-duration-and-func),
+    color var(--transition-duration-and-func),
+    box-shadow var(--transition-duration-and-func);
 }
 .fl-btn:hover,
 .fl-btn:focus {
@@ -584,8 +598,7 @@ body {
 }
 .card {
   display: block;
-  transition-property: box-shadow;
-  transition: var(--transition-duration-and-func);
+  transition-property: box-shadow var(--transition-duration-and-func);
 }
 .card:hover,
 .card:focus {
@@ -611,8 +624,7 @@ body {
   background-color: var(--color-iris);
   padding: 40px 32px 0 32px;
   transform: translate(0, 100%);
-  transition-property: transform;
-  transition: var(--transition-duration-and-func);
+  transition-property: transform var(--transition-duration-and-func);
 }
 .card:hover .duo-card,
 .card:focus .duo-card {
