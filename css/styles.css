@@ -103,7 +103,6 @@ button {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
-  padding: 24px 0 24px 0;
 }
 .nav-page {
   display: flex;
@@ -117,49 +116,20 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color-navy-blue);
-  /* transform: color: var(var(--color-ocean));
-  transition-property: color var(--transition-duration-and-func); */
-  animation: staticColor infinite alternate forwards;
+  padding: 24px 0 24px 0;
 }
-@keyframes staticColor {
-  0% {
-    transform: var(--color-navy-blue);
-  }
-  100% {
-    transform: var(--color-ocean);
-  }
-}
-
-/* .nav-page:hover,
-.nav-page:focus {
-  animation-name: staticColor;
-  animation-fill-mode: both;
-} */
-/* .nav-page.active {
+.current {
   color: var(--color-ocean);
-} */
-/* Overline */
-.nav-page::after {
+}
+.nav-page.current::after {
   content: '';
   position: absolute;
-  top: 44px;
+  bottom: 0;
   height: 4px;
   width: 100%;
   border-radius: 2px;
-  background-color: none;
-  /* opacity: 0;
-  transition-property: opacity var(--transition-duration-and-func); */
-}
-/* .nav-page:hover::after,
-.nav-page:focus::after {
-  opacity: 1;
-} */
-
-/* .nav-page.active::after,
-.nav-page:hover::after,
-.nav-page:focus::after {
   background-color: var(--color-iris);
-} */
+}
 .contact {
   display: flex;
   justify-content: space-between;
@@ -499,6 +469,13 @@ button {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
+  transition-property: opacity var(--transition-duration-and-func),
+    visibility var(--transition-duration-and-func);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .modal {
   position: absolute;
@@ -508,8 +485,13 @@ button {
   height: 576px;
   border-radius: 4px;
   background-color: rgba(252, 252, 252, 1);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  transition: transform 2000ms cubic-bezier(0.65, 1.43, 0, -1.33) 100ms;
 }
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) rotate(360deg) scale(0.2);
+}
+
 .close-btn {
   position: absolute;
   top: 24px;
@@ -536,11 +518,6 @@ button {
 }
 .close-icon {
   fill: currentColor;
-}
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 /* Page Portfolio  */
 /* Heder  */
