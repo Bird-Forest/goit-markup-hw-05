@@ -117,6 +117,11 @@ button {
   letter-spacing: 0.02em;
   color: var(--color-navy-blue);
   padding: 24px 0 24px 0;
+  transition: color var(--transition-duration-and-func);
+}
+.nav-page:hover,
+.nav-page:focus {
+  color: var(--color-ocean);
 }
 .current {
   color: var(--color-ocean);
@@ -144,7 +149,7 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color-slate);
-  transition-property: color var(--transition-duration-and-func);
+  transition: color var(--transition-duration-and-func);
 }
 .contact-nav:hover,
 .contact-nav:focus {
@@ -198,7 +203,7 @@ button {
   padding: 16px 32px;
   border-radius: 4px;
   margin-top: 48px;
-  transition-property: background-color var(--transition-duration-and-func);
+  transition: background-color var(--transition-duration-and-func);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -333,7 +338,7 @@ button {
   background-color: var(--color-iris);
   color: var(--color-cloud);
   border-radius: 50%;
-  transition-property: background-color var(--transition-duration-and-func);
+  transition: background-color var(--transition-duration-and-func);
 }
 .cont-icon:hover,
 .cont-icon:focus {
@@ -378,7 +383,7 @@ button {
   color: #afb1b8;
   border: 1px solid var(--color-light-slate);
   border-radius: 4px;
-  transition-property: color var(--transition-duration-and-func),
+  transition: color var(--transition-duration-and-func),
     border var(--transition-duration-and-func);
 }
 .client-cont:hover,
@@ -452,7 +457,7 @@ button {
   align-items: center;
   background-color: var(--color-iris);
   color: var(--color-cloud);
-  transition-property: background-color var(--transition-duration-and-func);
+  transition: background-color var(--transition-duration-and-func);
 }
 .social-bg:hover,
 .social-bg:focus {
@@ -487,7 +492,7 @@ button {
   border-radius: 4px;
   background-color: rgba(252, 252, 252, 1);
   transform: translate(-50%, -50%);
-  transition: transform 2000ms cubic-bezier(0.65, 1.43, 0, -1.33) 100ms;
+  transition: transform 1000ms cubic-bezier(0.65, 1.43, 0, -1.33);
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) rotate(360deg) scale(0.2);
@@ -550,7 +555,7 @@ body {
   letter-spacing: 0.04em;
   color: var(--color-iris);
   cursor: pointer;
-  transition-property: background-color var(--transition-duration-and-func),
+  transition: background-color var(--transition-duration-and-func),
     color var(--transition-duration-and-func),
     box-shadow var(--transition-duration-and-func);
 }
@@ -576,7 +581,7 @@ body {
 }
 .card {
   display: block;
-  transition-property: box-shadow var(--transition-duration-and-func);
+  transition: box-shadow var(--transition-duration-and-func);
 }
 .card:hover,
 .card:focus {
@@ -602,7 +607,7 @@ body {
   background-color: var(--color-iris);
   padding: 40px 32px 0 32px;
   transform: translate(0, 100%);
-  transition-property: transform var(--transition-duration-and-func);
+  transition: transform var(--transition-duration-and-func);
 }
 .card:hover .duo-card,
 .card:focus .duo-card {
